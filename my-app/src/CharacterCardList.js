@@ -14,9 +14,13 @@ function CharacterCardList() {
   });
   console.log(characterList);
 
-  return characterList.map((x) => {
-    return <CharacterCard imgSrc={x.image} name={x.name}></CharacterCard>;
-  });
+  return (
+  <div className="car-list">
+    { characterList.map((x) => {
+      return <CharacterCard key={x.name} imgSrc={x.image} name={x.name}></CharacterCard>;
+    })}
+  </div>
+)
 }
 
 export default CharacterCardList;
