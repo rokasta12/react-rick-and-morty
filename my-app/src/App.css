@@ -1,48 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 120px;
+  background-color: black;
+  margin-bottom: 50px;
+}
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
   color: white;
+  background-color: black;
+  margin-top: 50px;
 }
-
-.App-link {
-  color: #61dafb;
+.App h2 {
+  font-size: 40px;
+  color: aquamarine;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  margin: 0 auto;
+  width: 1200px;
 }
 .card {
-  border: 1px gray solild;
-  padding: 10px 15px;
-  width: 30%;
+  border: 1px rgb(228, 228, 228) solid;
+  padding: 10px 0px;
 }
 .car-list {
   display: flex;
-  justify-content: space-around;
-  gap: 5%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.card-content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.alive-border {
+  border-bottom: 5px solid rgb(43, 206, 43);
+}
+.dead-border {
+  border-bottom: 5px solid rgb(240, 72, 72);
+}
+.filter-area {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.filter-items select {
+  margin-right: 15px;
+}
+.filter-items label {
+  margin-right: 5px;
+}
+.card-content p {
+  margin-top: 5px;
 }
