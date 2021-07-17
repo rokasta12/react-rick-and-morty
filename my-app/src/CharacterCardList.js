@@ -72,9 +72,7 @@ function CharacterCardList() {
       const queryString = queryQuestion + queryItems.join('&')
       setCharacterQuery(queryString)
     }
-
   }
-
 
   return (
     <div>
@@ -98,6 +96,7 @@ function CharacterCardList() {
             </select>
         </div>
       </div>
+
       <div className="car-list">
         {characterList.map((character) => {
           return (
