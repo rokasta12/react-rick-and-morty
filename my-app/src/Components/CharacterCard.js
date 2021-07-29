@@ -14,11 +14,11 @@ function CharacterCard({ imgSrc, name, alive, type, lastLocation, gender }) {
         <h2 style={{ color: 'darkblue' }}>{name}</h2>
         <p>
           <strong>Location : </strong>
-          {stringTrimmer(lastLocation)}
+          {lastLocation}
         </p>
         <p>
           <strong>Type: </strong>
-          {type ? ' ' + stringTrimmer(type) : ' Not specified.'}
+          {type ? ' ' + type : ' Not specified.'}
         </p>
         <p>
           <strong>Gender: </strong>

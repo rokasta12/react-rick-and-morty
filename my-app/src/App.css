@@ -9,6 +9,7 @@
   height: 120px;
   background-color: black;
   margin-bottom: 50px;
+  box-sizing: border-box;
 }
 .Footer {
   display: flex;
@@ -30,6 +31,7 @@
 .card {
   border: 1px rgb(228, 228, 228) solid;
   padding: 10px 0px;
+  width: 300px;
 }
 .car-list {
   display: flex;
@@ -65,4 +67,5 @@
 }
 .card-content p {
   margin-top: 5px;
+  width: 300px;
 }

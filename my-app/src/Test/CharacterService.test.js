@@ -1,28 +1,9 @@
 import { fetchCharacters } from '../Services/CharacterService';
-import { livenessSelect } from '../Data/constants';
+import { livenessSelect, einsteinQueryResult } from '../Data/constants';
 import { setCharacterQueryString } from '../Utils/QueryStringGenerator';
 import { getMockEvent } from './QueryStringGenerator.test';
 /* Test with constants */
-const einsteinQueryResult = {
-  id: 11,
-  name: 'Albert Einstein',
-  status: 'Dead',
-  species: 'Human',
-  type: '',
-  gender: 'Male',
-  origin: {
-    name: 'Earth (C-137)',
-    url: 'https://rickandmortyapi.com/api/location/1',
-  },
-  location: {
-    name: 'Earth (Replacement Dimension)',
-    url: 'https://rickandmortyapi.com/api/location/20',
-  },
-  image: 'https://rickandmortyapi.com/api/character/avatar/11.jpeg',
-  episode: ['https://rickandmortyapi.com/api/episode/12'],
-  url: 'https://rickandmortyapi.com/api/character/11',
-  created: '2017-11-04T20:20:20.965Z',
-};
+
 describe('fetchCharacters service Test', () => {
   let response;
 
@@ -74,6 +55,21 @@ describe('fetchCharacters service with query', () => {
     const characterResults = response.results;
     expect(characterResults).toHaveLength(1);
     expect(characterResults[0]).toEqual(einsteinQueryResult);
+  });
+
+  it.only('should return searched', async () => {
+    const event = getMockEvent('name', 'Rick');
+
+    let characterQuery = '';
+    const query = setCharacterQueryString(event, characterQuery);
+
+    const response = await fetchCharacters(query);
+
+    const characterResults = response.results;
+    expect(characterResults.length).toBeGreaterThan(2);
+    characterResults.forEach((character) => {
+      expect(character.name).toContain(event.target.value);
+    });
   });
   /* it.only('shoud  be true fror every livenesSelect option', async () => {
     const queryName = livenessSelect.name;
